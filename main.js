@@ -1,6 +1,6 @@
-function logIn() {
 const fsLibrary  = require('fs') 
-  
+
+function logIn() {  
 // Data which will need to add in a file. 
 let data = "Hello world 2."
   
