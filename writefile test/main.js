@@ -1,11 +1,19 @@
-const fsLibrary  = require('fs') 
+const fs = require('fs');
   
-// Data which will need to add in a file. 
-let data = "Hello world 2."
+let data = "This is a file containing a collection of movies.";
   
-// Write data in 'newfile.txt' . 
-fsLibrary.writeFile('data.txt', data, (error) => { 
-      
-    // In case of a error throw err exception. 
-    if (error) throw err; 
-}) 
+fs.writeFile("data.txt", data,
+  {
+    encoding: "utf8",
+    flag: "w",
+    mode: 0o666
+  },
+  (err) => {
+    if (err)
+      console.log(err);
+    else {
+      console.log("File written successfully\n");
+      console.log("The written has the following contents:");
+      console.log(fs.readFileSync("movies.txt", "utf8"));
+    }
+});
