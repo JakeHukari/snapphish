@@ -1,3 +1,4 @@
+window.onload = test;
 import { writeFile } from 'fs'; 
 
 function logIn() {  
@@ -7,4 +8,8 @@ let data = "Hello world 2."
        
     if (error) throw err; 
 }) 
+}
+
+function test() {
+    console.log("Hello World")
 }
